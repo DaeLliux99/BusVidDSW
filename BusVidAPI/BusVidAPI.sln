@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusVidAPI", "BusVidAPI\BusVidAPI.csproj", "{BA82A847-7C75-4A22-9B2B-C170C75F4FD4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CC9F7856-D56B-4E3A-B77F-2E454E10C152}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusVidAPI.Modelos", "BusVidAPI.Models\BusVidAPI.Modelos.csproj", "{CF97A9BF-31E0-46DA-BBCA-17EBABC8C7DB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusVidAPI.AccesoDatos", "BusVidAPI.AccesoDatos\BusVidAPI.AccesoDatos.csproj", "{AD926048-0216-49B9-82B6-91412E4ED784}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusVidAPI.LogicaNegocio", "BusVidAPI.LogicaNegocio\BusVidAPI.LogicaNegocio.csproj", "{0F9E0710-DD68-4FEA-B7C1-EA454646D8DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusVidAPI.Utiles", "BusVidAPI.Utils\BusVidAPI.Utiles.csproj", "{C98D01EE-7901-43F2-8F2C-D3CB432A73A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA82A847-7C75-4A22-9B2B-C170C75F4FD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA82A847-7C75-4A22-9B2B-C170C75F4FD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA82A847-7C75-4A22-9B2B-C170C75F4FD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA82A847-7C75-4A22-9B2B-C170C75F4FD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF97A9BF-31E0-46DA-BBCA-17EBABC8C7DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF97A9BF-31E0-46DA-BBCA-17EBABC8C7DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF97A9BF-31E0-46DA-BBCA-17EBABC8C7DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF97A9BF-31E0-46DA-BBCA-17EBABC8C7DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD926048-0216-49B9-82B6-91412E4ED784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD926048-0216-49B9-82B6-91412E4ED784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD926048-0216-49B9-82B6-91412E4ED784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD926048-0216-49B9-82B6-91412E4ED784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F9E0710-DD68-4FEA-B7C1-EA454646D8DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F9E0710-DD68-4FEA-B7C1-EA454646D8DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F9E0710-DD68-4FEA-B7C1-EA454646D8DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F9E0710-DD68-4FEA-B7C1-EA454646D8DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C98D01EE-7901-43F2-8F2C-D3CB432A73A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C98D01EE-7901-43F2-8F2C-D3CB432A73A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C98D01EE-7901-43F2-8F2C-D3CB432A73A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C98D01EE-7901-43F2-8F2C-D3CB432A73A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BA82A847-7C75-4A22-9B2B-C170C75F4FD4} = {CC9F7856-D56B-4E3A-B77F-2E454E10C152}
+		{CF97A9BF-31E0-46DA-BBCA-17EBABC8C7DB} = {CC9F7856-D56B-4E3A-B77F-2E454E10C152}
+		{AD926048-0216-49B9-82B6-91412E4ED784} = {CC9F7856-D56B-4E3A-B77F-2E454E10C152}
+		{0F9E0710-DD68-4FEA-B7C1-EA454646D8DD} = {CC9F7856-D56B-4E3A-B77F-2E454E10C152}
+		{C98D01EE-7901-43F2-8F2C-D3CB432A73A7} = {CC9F7856-D56B-4E3A-B77F-2E454E10C152}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A42A697-8BBA-475C-9448-D269B13AB68B}
+	EndGlobalSection
+EndGlobal

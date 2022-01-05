@@ -1,0 +1,31 @@
+#Consultas
+SELECT * FROM Viaje;
+SELECT * FROM VistaViaje;
+SELECT * FROM Bus;
+SeLECT * FROM Ciudad;
+SELECT * FROM CiudadExtremo;
+SELECT * FROM Pasaje;
+SELECT * FROM Pasajero;
+
+#Jsons
+#Viajes
+{
+    "fecha": "2022-02-02",
+    "hora": "18:00",
+    "nroAsientosDisp": 60,
+    "precio": 45.50,
+    "idBus": 2,
+    "idAdministrador": 1,
+    "idCiudadInicio": 1,
+    "inicio": "Lima",
+    "idCiudadDestino": 5,
+    "destino": "Iquitos"
+}
+#Pasajes
+{
+    "idViaje": 4,
+    "dni": "74444848",
+    "Nombre": "Elrry",
+    "Apellidos": "Capi"
+}
+
