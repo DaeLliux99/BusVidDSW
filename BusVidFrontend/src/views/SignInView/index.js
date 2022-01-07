@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useState} from "react";
 import { 
   Button,
   Modal,
@@ -10,20 +10,16 @@ import {
   ModalCloseButton,
   FormLabel,
   Input,
-  useDisclosure, 
-  FormControl
+  FormControl,
+  LinkOverlay
 } from "@chakra-ui/react"
 
-const SignInView = () => {
-  const {isOpen, onOpen, onClose} = useDisclosure();
-  const initialRef = React.useRef();
-  const finalRef = React.useRef();
+const SignInView = ({isOpen, onClose}) => {
+  const [show, setShow] = useState(false);
+  const handleClick = () => setShow(!show);
   return (
     <div>
-      <Button onClick={onOpen}>Iniciar Sesion</Button>
       <Modal
-        initialFocusRef={initialRef}
-        finalFocusRef={finalRef}
         isOpen={isOpen}
         onClose={onClose}
       >
@@ -36,14 +32,14 @@ const SignInView = () => {
               <FormLabel>DNI</FormLabel>
               <Input placeholder='DNI'/>
             </FormControl>
-            <FormControl>
+            <FormControl >
               <FormLabel>Contraseña</FormLabel>
-              <Input placeholder='contraseña'/>
+              <Input type= {show ? 'text': 'password'} placeholder='contraseña'/>
             </FormControl>
           </ModalBody>
           <ModalFooter>
             <Button colorScheme='blue' mr={3}>
-              Iniciar Sesion
+              <LinkOverlay href="/adminView">Iniciar Sesion</LinkOverlay>
             </Button>
             <Button onClick={onClose}>Cancelar</Button>
           </ModalFooter>
