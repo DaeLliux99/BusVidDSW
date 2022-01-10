@@ -9,7 +9,7 @@ namespace BusVidAPI.AccesoDatos.Core
 {
     public class BusDA
     {
-        string conf = "Server=DESKTOP-4JKICP9;Database=busVidDB;User Id=sa;Password=123;";
+        string conf = "Server=localhost;Database=busVidDB;User Id=sa;Password='qwerQWER1234!';";
         private Bus LlenarEntidad(IDataReader reader)
         {
             Bus bus = new Bus();
@@ -66,6 +66,24 @@ namespace BusVidAPI.AccesoDatos.Core
                 conexion.Close();
             }
             return buses;
+        }
+        public Bus InsertarBus(Bus bus)
+        {
+            using (SqlConnection conexion = new SqlConnection(conf))
+            {
+                using (SqlCommand comando = new SqlCommand("paBus_Insertar", conexion))
+                {
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@nroPlaca", bus.NroPlaca);
+                    comando.Parameters.AddWithValue("@marca", bus.Marca);
+                    comando.Parameters.AddWithValue("@modelo", bus.Modelo);
+                    comando.Parameters.AddWithValue("@nroAsientos", bus.NroAsientos);
+                    conexion.Open();
+                    bus.Id = Convert.ToInt32(comando.ExecuteScalar());
+                    conexion.Close();
+                }
+            }
+            return bus;
         }
     }
 }

@@ -1,4 +1,6 @@
 import React from 'react'
+import useInsertarBus from '../../hooks/useInsertarBus'
+import useInput from '../../hooks/useInput'
 import { 
   Button,
   Modal,
@@ -20,11 +22,16 @@ import {
 } from "@chakra-ui/react"
 
 const AddBusView = ({isOpen, onClose}) => {
+  const {input, handleInputChange} = useInput({
+    id: '',
+    nroPlaca: '',
+    marca: '',
+    modelo: '',
+    nroAsientos: ''
+  });
+  const {bus, insertarBus} = useInsertarBus(input); 
 	return (
-		<Modal
-        isOpen={isOpen}
-        onClose={onClose}
-      >
+		<Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay/>
         <ModalContent>
           <ModalHeader>Registro de Buses</ModalHeader>
@@ -32,20 +39,24 @@ const AddBusView = ({isOpen, onClose}) => {
           <ModalBody pb={6}>
             <FormControl>
               <FormLabel>Placa</FormLabel>
-              <Input placeholder='placa'/>
+              <Input name='nroPlaca' onChange={handleInputChange} placeholder='placa'/>
             </FormControl>
             <FormControl>
               <FormLabel>Marca</FormLabel>
-              <Input placeholder='marca'/>
+              <Input name='marca' onChange={handleInputChange} placeholder='marca'/>
             </FormControl>
             <FormControl >
               <FormLabel>Modelo</FormLabel>
-              <Input placeholder='modelo'/>
+              <Input name='modelo' onChange={handleInputChange} placeholder='modelo'/>
             </FormControl>
             <FormControl >
               <FormLabel>Numero de asientos</FormLabel>
               <NumberInput min={1}  >
-                <NumberInputField placeholder='asientos'/>
+                <NumberInputField 
+                  name='nroAsientos'
+                  onChange={handleInputChange}
+                  placeholder='asientos'
+                />
                 <NumberInputStepper>
                   <NumberIncrementStepper/>
                   <NumberDecrementStepper/>
@@ -54,7 +65,7 @@ const AddBusView = ({isOpen, onClose}) => {
             </FormControl>
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme='blue' mr={3}>
+            <Button onClick={()=>{insertarBus(); onClose();}} colorScheme='blue' mr={3}>
               Aceptar
             </Button>
             <Button onClick={onClose}>Cancelar</Button>

@@ -10,7 +10,7 @@ namespace BusVidAPI.AccesoDatos.Core
 {
     public class PasajeDA
     {
-        string conf = "Server=DESKTOP-4JKICP9;Database=busVidDB;User Id=sa;Password=123;";
+        string conf = "Server=localhost;Database=busVidDB;User Id=sa;Password='qwerQWER1234!';";
         public Pasaje InsertarPasaje(Pasaje pasaje)
         {
             using (SqlConnection conexion = new SqlConnection(conf))

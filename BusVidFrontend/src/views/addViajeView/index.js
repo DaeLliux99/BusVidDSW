@@ -1,4 +1,6 @@
 import React from 'react'
+import useObtenerCiudades from '../../hooks/useObtenerCiudades' 
+import useObtenerBuses from '../../hooks/useObtenerBuses'
 import { 
   Button,
   Modal,
@@ -18,12 +20,16 @@ import {
   FormControl,
   Flex,
   Select,
-  LinkOverlay
+  Box
 } from "@chakra-ui/react"
 
 const AddViajeView = ({isOpen, onClose}) => {
+
+  const {ciudades, loading } = useObtenerCiudades();
+  const {buses} = useObtenerBuses();
 	return (
-		<Modal
+    <Box>
+    <Modal
         isOpen={isOpen}
         onClose={onClose}
       >
@@ -37,7 +43,7 @@ const AddViajeView = ({isOpen, onClose}) => {
               <FormLabel>Fecha</FormLabel>
               <Input type="date" placeholder='fecha'/>
               </FormControl>
-              <FormControl m="2">
+                <FormControl m="2">
                 <FormLabel>Hora</FormLabel>
                 <Input type="time" placeholder='hora'/>
               </FormControl>
@@ -46,30 +52,28 @@ const AddViajeView = ({isOpen, onClose}) => {
               <FormControl m={2} >
               <FormLabel>Ciudad Partida</FormLabel>
               <Select placeholder='Escoge Ciudad'>
-                <option value='option1'>Lima</option>
-                <option value='option2'>Huancayo</option>
-                <option value='option3'>Arequipa</option>
+                {ciudades.map((ciudad) => (
+                  <option value={ciudad.id}>{ciudad.nombre}</option>
+                ))}
               </Select>
             </FormControl>
             <FormControl m={2}>
               <FormLabel>Ciudad Destino</FormLabel>
               <Select placeholder='Escoge Ciudad'>
-                <option value='option1'>Lima</option>
-                <option value='option2'>Huancayo</option>
-                <option value='option3'>Arequipa</option>
+                {ciudades.map((ciudad) => (
+                  <option value={ciudad.id}>{ciudad.nombre}</option>
+                ))}
               </Select>
             </FormControl>
             </Flex>
             <Flex>
               <FormControl m={2}>
-                <FormLabel>Numero de asientos</FormLabel>
-                <NumberInput min={1}  >
-                  <NumberInputField placeholder='asientos'/>
-                  <NumberInputStepper>
-                    <NumberIncrementStepper/>
-                    <NumberDecrementStepper/>
-                  </NumberInputStepper>
-                </NumberInput>
+              <FormLabel>Bus</FormLabel>
+              <Select placeholder='Escoge el bus'>
+                {buses.map((bus) => (
+                  <option value={bus.id}>{bus.nroPlaca}</option>
+                ))}
+              </Select>
               </FormControl>
               <FormControl m={2}>
                 <FormLabel>Precio</FormLabel>
@@ -91,6 +95,7 @@ const AddViajeView = ({isOpen, onClose}) => {
           </ModalFooter>
         </ModalContent>
       </Modal>
+    </Box>
 	) 
 }
 export default AddViajeView;

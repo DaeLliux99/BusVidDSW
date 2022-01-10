@@ -3,8 +3,10 @@ using BusVidAPI.Utiles.Helpers;
 using System;
 using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
-using System.Configuration;
+using Microsoft.Extensions.Configuration.Json;
+using System.Web;
 using System.Data;
+using System.IO;
 using System.Data.SqlClient;
 using System.Text;
 
@@ -12,7 +14,7 @@ namespace BusVidAPI.AccesoDatos.Core
 {
     public class AdministradorDA
     {
-        string conf = "Server=DESKTOP-4JKICP9;Database=busVidDB;User Id=sa;Password=123;";
+        string conf = "Server=localhost;Database=busVidDB;User Id=sa;Password='qwerQWER1234!';";
         private Administrador LlenarEntidad(IDataReader reader)
         {
             Administrador admin = new Administrador();

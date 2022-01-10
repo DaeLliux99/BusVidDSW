@@ -9,7 +9,7 @@ namespace BusVidAPI.AccesoDatos.Core
 {
     public class CiudadDA
     {
-        private string conf = "Server=DESKTOP-4JKICP9;Database=busVidDB;User Id=sa;Password=123;";
+        string conf = "Server=localhost;Database=busVidDB;User Id=sa;Password='qwerQWER1234!';";
         private Ciudad LlenarEntidad(IDataReader reader)
         {
             Ciudad ciudad = new Ciudad();

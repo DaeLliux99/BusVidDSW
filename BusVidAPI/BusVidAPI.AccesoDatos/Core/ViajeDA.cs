@@ -11,7 +11,7 @@ namespace BusVidAPI.AccesoDatos.Core
 {
     public class ViajeDA
     {
-        string conf = "Server=DESKTOP-4JKICP9;Database=busVidDB;User Id=sa;Password=123;";
+        string conf = "Server=localhost;Database=busVidDB;User Id=sa;Password='qwerQWER1234!';";
         private Viaje LlenarEntidad(IDataReader reader)
         {
             Viaje viaje = new Viaje();

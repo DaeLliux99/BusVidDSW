@@ -3,8 +3,10 @@ using BusVidAPI.Modelos.Core;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -30,13 +32,14 @@ namespace BusVidAPI.Controllers
 
         // POST api/<ViajeController>
         [HttpPost]
-        public void Post([FromBody] Viaje value)
+        public Viaje Post([FromBody] Viaje value)
         {
             Viaje viaje = new ViajeLN().InsertarViaje(value);
             CiudadExtremo ceIni = new CiudadExtremo { IdViaje = viaje.Id, IdCiudad = viaje.IdCiudadInicio, Tipo = "Inicio" };
             CiudadExtremo ceDes = new CiudadExtremo { IdViaje = viaje.Id, IdCiudad = viaje.IdCiudadDestino, Tipo = "Destino" };
             ceIni = new CiudadExtremoLN().InsertarCiudadExtremo(ceIni);
             ceDes = new CiudadExtremoLN().InsertarCiudadExtremo(ceDes);
+            return viaje;
         }
 
         // PUT api/<ViajeController>/5

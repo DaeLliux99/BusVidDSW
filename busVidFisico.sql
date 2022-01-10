@@ -53,7 +53,7 @@ CREATE TABLE CiudadExtremo(
 )
 
 INSERT INTO Administrador
-VALUES ('74244049', '123');
+VALUES ('74244049', 'Esteban','123', '123');
 
 INSERT INTO Ciudad
 VALUES ('Lima');
@@ -83,10 +83,10 @@ INSERT INTO Bus
 VALUES ('8F8F8F', 'Mitsubishi', 'FVNGJRUGJN', '50');
 
 INSERT INTO Viaje
-VALUES ('2022-01-28','15:00', 45, 3, 1);
+VALUES ('2022-01-28','15:00', 45,20.00, 3, 1);
 
 INSERT INTO Viaje
-VALUES ('2022-01-29', '15:00:00', 40, 1, 1)
+VALUES ('2022-01-29', '15:00:00', 40,15.50, 1, 1)
 
 INSERT INTO CiudadExtremo
 VALUES (1, 1, 'Inicio');

@@ -30,8 +30,9 @@ namespace BusVidAPI.Controllers
 
         // POST api/<BusController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public Bus Post([FromBody] Bus value)
         {
+            return new BusLN().InsertarBus(value);
         }
 
         // PUT api/<BusController>/5

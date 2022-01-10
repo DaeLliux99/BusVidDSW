@@ -11,7 +11,7 @@ namespace BusVidAPI.AccesoDatos.Core
 {
     public class CiudadExtremoDA
     {
-        string conf = "Server=DESKTOP-4JKICP9;Database=busVidDB;User Id=sa;Password=123;";
+        string conf = "Server=localhost;Database=busVidDB;User Id=sa;Password='qwerQWER1234!';";
         public CiudadExtremo InsertarCiudadExtremo(CiudadExtremo ce)
         {
             using (SqlConnection conexion = new SqlConnection(conf))

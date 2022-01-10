@@ -21,12 +21,13 @@ WHERE dni = @dni;
 CREATE PROCEDURE paAdministrador_insertar
 	@password varchar(100),
 	@dni varchar(8),
-	@nombre varchar(20)
+	@nombre varchar(20),
+	@saltPassword varchar(100)
 AS
 BEGIN
 	SET NOCOUNT ON;
-	Insert into Administrador(dni, password, nombre)
-	Values (@dni, @password, @nombre)
+	Insert into Administrador(dni, password, nombre, saltPassword)
+	Values (@dni, @password, @nombre, @saltPassword)
 END
 
 CREATE PROCEDURE paAdministrador_Modificar
@@ -61,6 +62,18 @@ SELECT * FROM Ciudad;
 CREATE PROCEDURE paBus_Listar
 AS
 SELECT * FROM Bus;
+
+CREATE PROCEDURE paBus_Insertar
+@nroPlaca VARCHAR(8),
+@marca VARCHAR(15),
+@modelo VARCHAR(15),
+@nroAsientos INT
+AS
+BEGIN
+INSERT INTO Bus (nroPlaca, marca, modelo, nroAsientos)
+VALUES (@nroPlaca, @marca, @modelo, @nroAsientos);
+SELECT SCOPE_IDENTITY()
+END
 
 CREATE PROCEDURE paViaje_Listar
 AS

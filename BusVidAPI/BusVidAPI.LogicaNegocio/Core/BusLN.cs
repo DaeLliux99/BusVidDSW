@@ -20,5 +20,10 @@ namespace BusVidAPI.LogicaNegocio.Core
                 return null;
             }
         }
+
+        public Bus InsertarBus(Bus bus)
+        {
+            return new BusDA().InsertarBus(bus);
+        }
     }
 }

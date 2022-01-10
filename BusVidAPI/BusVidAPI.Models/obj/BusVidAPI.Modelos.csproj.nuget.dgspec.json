@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dino_\\OneDrive\\Escritorio\\ProyectoDSW\\BusVidAPI\\BusVidAPI.Models\\BusVidAPI.Modelos.csproj": {}
+    "/home/esteban/Escritorio/busvid-frontend/BusVidAPI/BusVidAPI.Models/BusVidAPI.Modelos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dino_\\OneDrive\\Escritorio\\ProyectoDSW\\BusVidAPI\\BusVidAPI.Models\\BusVidAPI.Modelos.csproj": {
+    "/home/esteban/Escritorio/busvid-frontend/BusVidAPI/BusVidAPI.Models/BusVidAPI.Modelos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dino_\\OneDrive\\Escritorio\\ProyectoDSW\\BusVidAPI\\BusVidAPI.Models\\BusVidAPI.Modelos.csproj",
+        "projectUniqueName": "/home/esteban/Escritorio/busvid-frontend/BusVidAPI/BusVidAPI.Models/BusVidAPI.Modelos.csproj",
         "projectName": "BusVidAPI.Modelos",
-        "projectPath": "C:\\Users\\dino_\\OneDrive\\Escritorio\\ProyectoDSW\\BusVidAPI\\BusVidAPI.Models\\BusVidAPI.Modelos.csproj",
-        "packagesPath": "C:\\Users\\dino_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dino_\\OneDrive\\Escritorio\\ProyectoDSW\\BusVidAPI\\BusVidAPI.Models\\obj\\",
+        "projectPath": "/home/esteban/Escritorio/busvid-frontend/BusVidAPI/BusVidAPI.Models/BusVidAPI.Modelos.csproj",
+        "packagesPath": "/home/esteban/.nuget/packages/",
+        "outputPath": "/home/esteban/Escritorio/busvid-frontend/BusVidAPI/BusVidAPI.Models/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dino_\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/esteban/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -49,12 +47,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }

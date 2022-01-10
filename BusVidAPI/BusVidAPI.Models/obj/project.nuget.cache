@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wJ8SAOP4UHUO9Off+mL+uiCPkyWba30CTAeYGR5D1VahBgrYUwLGRY+800vK0FVVdUXwrsTeka7aKJc26e0UwQ==",
+  "dgSpecHash": "FZ+6MfxebrlYpCqS6gua+RXs/xCivKc4VzZlhaEb6TgoIttznVmNhK9eG8nmIAHsXInCR7zN1BV6KVJ2rwZAZg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dino_\\OneDrive\\Escritorio\\ProyectoDSW\\BusVidAPI\\BusVidAPI.Models\\BusVidAPI.Modelos.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/esteban/Escritorio/busvid-frontend/BusVidAPI/BusVidAPI.Models/BusVidAPI.Modelos.csproj",
+  "expectedPackageFiles": [
+    "/home/esteban/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"
+  ],
   "logs": []
 }
