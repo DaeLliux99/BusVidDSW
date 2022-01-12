@@ -80,7 +80,6 @@ AS
 SELECT * FROM VistaViaje;
 
 CREATE PROCEDURE paViaje_Insertar
-@idViaje INT,
 @fecha DATE,
 @horaInicio TIME,
 @nroAsientosDisp INT,
@@ -89,10 +88,10 @@ CREATE PROCEDURE paViaje_Insertar
 @idAdministrador INT
 AS
 BEGIN
-INSERT INTO Viaje (idViaje, fecha, horaInicio, nroAsientosDisp, precio, idBus, idAdministrador)
-VALUES (@idViaje,@fecha, @horaInicio, @nroAsientosDisp, @precio, @idBus, @idAdministrador);
+INSERT INTO Viaje (fecha, horaInicio, nroAsientosDisp, precio, idBus, idAdministrador)
+VALUES (@fecha, @horaInicio, @nroAsientosDisp, @precio, @idBus, @idAdministrador);
 SELECT SCOPE_IDENTITY()
-END
+END;
 
 CREATE PROCEDURE paCiudadExtremo_Insertar
 @idCiudad INT,
