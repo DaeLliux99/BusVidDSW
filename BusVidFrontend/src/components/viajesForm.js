@@ -62,7 +62,9 @@ const ViajesForm = ({input, handleInputChange}) => {
             placeholder="Escoge Ciudad"
           >
             {ciudades.map((ciudad) => (
-              <option key={ciudad.id} value={ciudad.id}>{ciudad.nombre}</option>
+              <option key={ciudad.id} value={ciudad.id}>
+                {ciudad.nombre}
+              </option>
             ))}
           </Select>
         </FormControl>
@@ -74,7 +76,9 @@ const ViajesForm = ({input, handleInputChange}) => {
             placeholder="Escoge Ciudad"
           >
             {ciudades.map((ciudad) => (
-              <option key={ciudad.id} value={ciudad.id}>{ciudad.nombre}</option>
+              <option key={ciudad.id} value={ciudad.id}>
+                {ciudad.nombre}
+              </option>
             ))}
           </Select>
         </FormControl>

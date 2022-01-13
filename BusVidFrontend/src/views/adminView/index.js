@@ -9,7 +9,7 @@ import AddViajeView from '../addViajeView';
 const AdminView = () => {
 	const addBus = useModalButton();
 	const addViaje = useModalButton();
-	const {viajes, loading, handleCrearViaje} = useObtenerViajes();
+	const { viajes, loading, handleCrearViaje } = useObtenerViajes();
 	return (
     <Box as="main" pb={8}>
       <NavBar />
