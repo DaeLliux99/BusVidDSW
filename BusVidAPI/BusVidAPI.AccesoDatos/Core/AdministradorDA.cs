@@ -160,7 +160,7 @@ namespace BusVidAPI.AccesoDatos.Core
                     comando.Parameters.AddWithValue("@dni", admin.Dni);
                     comando.Parameters.AddWithValue("@nombre", admin.Nombre);
                     comando.Parameters.AddWithValue("@saltPassword", admin.Salt);
-                    conexion.Open();
+                    conexion.Open();   
                     SqlDataReader reader = comando.ExecuteReader();
                     while (reader.Read())
                     {

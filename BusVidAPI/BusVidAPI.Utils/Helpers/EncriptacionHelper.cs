@@ -19,6 +19,7 @@ namespace BusVidAPI.Utiles.Helpers
                 rngCsp.GetNonZeroBytes(salt);
             }
             Console.WriteLine($"Salt: {Convert.ToBase64String(salt)}");
+            Console.WriteLine(password);
             // derive a 256-bit subkey (use HMACSHA256 with 100,000 iterations)
             string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
                 password: password,

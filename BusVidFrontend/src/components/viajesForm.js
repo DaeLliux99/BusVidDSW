@@ -118,10 +118,6 @@ const ViajesForm = ({input, handleInputChange}) => {
               onChange={handleInputChange}
               placeholder="Precio"
             />
-            <NumberInputStepper>
-              <NumberIncrementStepper />
-              <NumberDecrementStepper />
-            </NumberInputStepper>
           </NumberInput>
         </FormControl>
       </Flex>

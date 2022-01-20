@@ -11,7 +11,7 @@ import {
   FormControl,
 } from "@chakra-ui/react";
 
-const BusesForm = ({handleInputChange}) => {
+const BusesForm = ({ handleInputChange }) => {
   return (
     <Box>
       <FormControl>
@@ -42,10 +42,6 @@ const BusesForm = ({handleInputChange}) => {
             onChange={handleInputChange}
             placeholder="asientos"
           />
-          <NumberInputStepper>
-            <NumberIncrementStepper />
-            <NumberDecrementStepper />
-          </NumberInputStepper>
         </NumberInput>
       </FormControl>
     </Box>

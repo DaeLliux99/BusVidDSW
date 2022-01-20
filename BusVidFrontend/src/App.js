@@ -33,7 +33,6 @@ const components = {
 }  
 const config = {
   initialColorMode: 'dark',
-  useSystemColorMode: true
 }
 const theme = extendTheme({components, config, styles})
 function App() {

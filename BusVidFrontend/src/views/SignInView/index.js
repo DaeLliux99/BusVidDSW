@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import useInput from "../../hooks/useInput";
+import useIniciarSesion from "../../hooks/useIniciarSesion";
 import { 
   Button,
   Modal,
@@ -14,39 +16,50 @@ import {
   LinkOverlay
 } from "@chakra-ui/react"
 
-const SignInView = ({isOpen, onClose}) => {
+const SignInView = ({isOpen, onClose}, props) => {
   const [show, setShow] = useState(false);
-  const handleClick = () => setShow(!show);
+  const {input, handleInputChange} = useInput({
+    dni: '',
+    password: ''
+  });
+  const {usuario, encontrado, handleIniciarSesion} = useIniciarSesion(input);
+  //const handleClick = () => setShow(!show);
   return (
     <div>
-      <Modal
-        isOpen={isOpen}
-        onClose={onClose}
-      >
-        <ModalOverlay/>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
         <ModalContent>
           <ModalHeader>Inicia Sesion</ModalHeader>
-          <ModalCloseButton/>
+          <ModalCloseButton />
           <ModalBody pb={6}>
             <FormControl>
               <FormLabel>DNI</FormLabel>
-              <Input placeholder='DNI'/>
+              <Input
+                name="dni"
+                onChange={handleInputChange}
+                placeholder="DNI"
+              />
             </FormControl>
-            <FormControl >
+            <FormControl>
               <FormLabel>Contraseña</FormLabel>
-              <Input type= {show ? 'text': 'password'} placeholder='contraseña'/>
+              <Input
+                name="password"
+                onChange={handleInputChange}
+                type={show ? "text" : "password"}
+                placeholder="Contraseña"
+              />
             </FormControl>
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme='blue' mr={3}>
-              <LinkOverlay href="/adminView">Iniciar Sesion</LinkOverlay>
+            <Button onClick={handleIniciarSesion} colorScheme="blue" mr={3}>
+              Iniciar Sesion
             </Button>
             <Button onClick={onClose}>Cancelar</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
     </div>
-  )
+  );
 }
 
 export default SignInView;

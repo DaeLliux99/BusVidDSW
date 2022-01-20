@@ -13,13 +13,13 @@ const AdminView = () => {
 	return (
     <Box as="main" pb={8}>
       <NavBar />
-      <Box align="center">
+      <Box align="center" width="100%">
         <Container align="center" wrap="wrap" maxW="container.xl" pt="100px">
-          <Flex align="center" mr={5}>
+          <Flex justifyContent="center" mr={5}>
             <TablaViajes viajes={viajes} loading={loading} />
           </Flex>
         </Container>
-        <Flex justifyContent="center">
+        <Flex mt="20px" justifyContent="center">
           <Button onClick={addBus.handleModalOpen} m={2}>
             Agregar Buses
           </Button>
