@@ -5,9 +5,6 @@ import {
   Input,
   NumberInput,
   NumberInputField,
-  NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
   FormControl,
 } from "@chakra-ui/react";
 

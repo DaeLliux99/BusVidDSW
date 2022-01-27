@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import axios from "axios";
+
 const useInsertarPasaje = (pasajeParam) => {
 	const [pasaje, setPasaje] = useState({}); 
 	const insertarPasaje = async () => {
@@ -14,6 +15,7 @@ const useInsertarPasaje = (pasajeParam) => {
         setPasaje(res.data);
         console.log("Estoy en get cuando hay respuesta");
         console.log(pasajeParam);
+        alert("Se registraron los pasajes correctamente, llevar el DNI titular en el viaje")
       })
       .catch((err) => {
         console.log("Estoy en error");

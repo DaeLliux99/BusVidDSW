@@ -1,11 +1,12 @@
-import React, {useEffect} from 'react'
-import NavBar from '../../components/navbar';
-import { Container, Box, Flex, Button, Stack} from '@chakra-ui/react'; 
+import React from "react";
+import NavBar from "../../components/navbar";
+import { Container, Box, Flex, Button} from "@chakra-ui/react"; 
 import TablaViajes from '../../components/tablaViajes';
 import useModalButton from '../../hooks/useModalButton'; 
 import useObtenerViajes from '../../hooks/useObtenerViajes';
 import AddBusView from '../addBusView';
 import AddViajeView from '../addViajeView';
+
 const AdminView = () => {
 	const addBus = useModalButton();
 	const addViaje = useModalButton();

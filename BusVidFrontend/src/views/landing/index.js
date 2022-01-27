@@ -1,11 +1,9 @@
 import React from "react";
 import {
-  Flex,
   Container,
   Button,
   Box,
   Stack,
-  VStack,
   Link
 } from "@chakra-ui/react"
 import SignInView from "../SignInView";
@@ -15,8 +13,7 @@ import useModalButton from '../../hooks/useModalButton';
 const LandingPage = () => {
   const login = useModalButton();
   const addPasaje = useModalButton();
-  const linkImagen =
-    "url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVzfGVufDB8fDB8fA%3D%3D&w=1000&q=80')";
+  const linkImagen = "url(/assets/wallpaper.jpeg)";
   return (
     <Container
       bgImg={linkImagen}

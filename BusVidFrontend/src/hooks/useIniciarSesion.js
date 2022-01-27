@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "universal-cookie/es6";
@@ -41,7 +41,7 @@ const useIniciarSesion = (usuarioParam) => {
     console.log("holi");
   }
   useEffect(()=>{
-    if (refreshKey != 0) { 
+    if (refreshKey !== 0) { 
       obtenerAdmin();
     }
   }, [refreshKey]);

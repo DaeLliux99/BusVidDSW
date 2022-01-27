@@ -11,8 +11,8 @@ import {
   TableCaption,
   useColorModeValue
 } from "@chakra-ui/react";
+
 const TablaViajesCliente = ({
-  input,
   handleInputChange,
   paso,
   setPaso,

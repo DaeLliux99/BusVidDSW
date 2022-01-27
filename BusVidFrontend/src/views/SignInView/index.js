@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import useInput from "../../hooks/useInput";
 import useIniciarSesion from "../../hooks/useIniciarSesion";
 import { 
@@ -13,17 +13,14 @@ import {
   FormLabel,
   Input,
   FormControl,
-  LinkOverlay
 } from "@chakra-ui/react"
 
 const SignInView = ({isOpen, onClose}, props) => {
-  const [show, setShow] = useState(false);
   const {input, handleInputChange} = useInput({
     dni: '',
     password: ''
   });
-  const {usuario, encontrado, handleIniciarSesion} = useIniciarSesion(input);
-  //const handleClick = () => setShow(!show);
+  const {handleIniciarSesion} = useIniciarSesion(input);
   return (
     <div>
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -45,7 +42,7 @@ const SignInView = ({isOpen, onClose}, props) => {
               <Input
                 name="password"
                 onChange={handleInputChange}
-                type={show ? "text" : "password"}
+                type={"password"}
                 placeholder="Contraseña"
               />
             </FormControl>

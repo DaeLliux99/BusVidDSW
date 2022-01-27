@@ -11,7 +11,6 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  LinkOverlay
 } from "@chakra-ui/react"
 
 const AddBusView = ({isOpen, onClose}) => {
@@ -22,7 +21,7 @@ const AddBusView = ({isOpen, onClose}) => {
     modelo: '',
     nroAsientos: ''
   });
-  const {bus, insertarBus} = useInsertarBus(input); 
+  const {insertarBus} = useInsertarBus(input); 
 	return (
 		<Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay/>

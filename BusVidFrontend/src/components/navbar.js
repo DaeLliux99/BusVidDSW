@@ -14,6 +14,7 @@ import {
 	Button
 } from '@chakra-ui/react';
 import { SunIcon, MoonIcon } from '@chakra-ui/icons'
+
 const NavBar = () => {
 	const cookies = new Cookies();
   const {cerrarSesion} = useCerrarSesion();

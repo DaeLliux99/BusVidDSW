@@ -25,7 +25,7 @@ const AddViajeView = ({isOpen, onClose, handleCrearViaje}) => {
     idCiudadInicio: '',
     idCiudadDestino: '',
   });
-  const {viaje, insertarViaje} = useInsertarViaje(input, handleCrearViaje);
+  const {insertarViaje} = useInsertarViaje(input, handleCrearViaje);
   	return (
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />

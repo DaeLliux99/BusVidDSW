@@ -8,17 +8,13 @@ import {
   Input,
   NumberInput,
   NumberInputField,
-  NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
   FormControl,
   Flex,
   Select,
 } from "@chakra-ui/react";
 
-
 const ViajesForm = ({input, handleInputChange}) => {
-  const {ciudades, loading } = useObtenerCiudades();
+  const {ciudades} = useObtenerCiudades();
   const {buses} = useObtenerBuses();
   const [asiento, setAsiento] = useState('');
   useEffect(()=>{

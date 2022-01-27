@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import {useState} from 'react';
 const axios = require('axios');
 
 const useInsertarBus = (busParam) => {
@@ -11,6 +11,7 @@ const useInsertarBus = (busParam) => {
       .then((res) => {
         setBus(res.data);
         console.log("Estoy en get cuando hay respuesta");
+        alert("Se ingresó el bus correctamente");
         //console.log(bus);
       })
       .catch((err) => {

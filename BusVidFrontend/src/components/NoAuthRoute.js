@@ -1,5 +1,6 @@
-import {Navigate, Route} from 'react-router-dom'
+import {Navigate} from 'react-router-dom'
 import Cookies from 'universal-cookie/es6'
+
 const NoAuthRoute = ({children}) => {
 	const cookies = new Cookies();
 	console.log(cookies.get("id"));

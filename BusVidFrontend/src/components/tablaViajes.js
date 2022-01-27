@@ -11,6 +11,7 @@ import {
   TableCaption,
   useColorModeValue
 } from "@chakra-ui/react";
+
 const TablaViajes = ({viajes, loading }) => {
 	return (
     <Box overflowY="auto" maxH="400px">

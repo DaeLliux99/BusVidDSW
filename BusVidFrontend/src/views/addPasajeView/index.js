@@ -16,6 +16,7 @@ import PagoForm from "../../components/pagoForm";
 import useObtenerViajes from "../../hooks/useObtenerViajes";
 import useInsertarPasaje from "../../hooks/useInsertarPasaje";
 import useInput from "../../hooks/useInput"
+
 const AddPasajeView = ({isOpen, onClose}) => {
   const {input, handleInputChange} = useInput({
     id: '',
@@ -27,7 +28,7 @@ const AddPasajeView = ({isOpen, onClose}) => {
     apellidos: '',
     cantidad: ''
   });
-  const {pasaje, insertarPasaje} = useInsertarPasaje(input);
+  const {insertarPasaje} = useInsertarPasaje(input);
   const {viajes, loading} = useObtenerViajes(); 
   const [paso, setPaso] = useState(1);
   return (
@@ -36,87 +37,88 @@ const AddPasajeView = ({isOpen, onClose}) => {
       <ModalContent>
         <ModalHeader>Registro de Viajes</ModalHeader>
         <ModalCloseButton />
-        <ModalBody pb={6}>
-          {(() => {
+        {(() => {
             switch (paso) {
               case 1:
                 return (
-                  <TablaViajesCliente
-                    input={input}
-                    handleInputChange={handleInputChange}
-                    paso={paso}
-                    setPaso={setPaso}
-                    viajes={viajes}
-                    loading={loading}
-                  />
+                  <ModalBody>
+                    <TablaViajesCliente
+                      input={input}
+                      handleInputChange={handleInputChange}
+                      paso={paso}
+                      setPaso={setPaso}
+                      viajes={viajes}
+                      loading={loading}
+                    />
+                  </ModalBody>
                 );
-              case 2:
-                return (
-                  <PasajeroForm
-                    input={input}
-                    handleInputChange={handleInputChange}
-                  />
-                );
-              case 3:
-                return (
-                  <PagoForm
-                    input={input}
-                    handleInputChange={handleInputChange}
-                  />
-                );
-            }
-          })()}
-        </ModalBody>
-        <ModalFooter>
-          {(() => {
-            switch (paso) {
               case 2:
                 return (
                   <Box>
-                    <Button
-                      onClick={() => {
-                        setPaso(paso - 1);
-                      }}
-                      mr={3}
-                    >
-                      Atras
-                    </Button>
-                    <Button
-                      onClick={() => {
-                        setPaso(paso + 1);
-                      }}
-                      colorScheme="blue"
-                    >
-                      Siguiente
-                    </Button>
+                    <ModalBody>
+                      <PasajeroForm
+                        input={input}
+                        handleInputChange={handleInputChange}
+                      />
+                    </ModalBody>
+                    <ModalFooter>
+                      <Box>
+                        <Button
+                          onClick={() => {
+                            setPaso(paso - 1);
+                          }}
+                          mr={3}
+                        >
+                          Atras
+                        </Button>
+                        <Button
+                          onClick={() => {
+                            setPaso(paso + 1);
+                          }}
+                          colorScheme="blue"
+                        >
+                          Siguiente
+                        </Button>
+                      </Box>
+                    </ModalFooter>
                   </Box>
                 );
               case 3:
                 return (
                   <Box>
-                    <Button
-                      onClick={() => {
-                        setPaso(paso - 1);
-                      }}
-                      mr={3}
-                    >
-                      Atras
-                    </Button>
-                    <Button
-                      onClick={() => {
-                        insertarPasaje();
-                        onClose();
-                      }}
-                      colorScheme="blue"
-                    >
-                      Finalizar
-                    </Button>
+                    <ModalBody>
+                      <PagoForm
+                        input={input}
+                        handleInputChange={handleInputChange}
+                      />
+                    </ModalBody>
+                    <ModalFooter>
+                      <Box>
+                        <Button
+                          onClick={() => {
+                            setPaso(paso - 1);
+                          }}
+                          mr={3}
+                        >
+                          Atras
+                        </Button>
+                        <Button
+                          onClick={() => {
+                            insertarPasaje();
+                            onClose();
+                          }}
+                          colorScheme="blue"
+                        >
+                          Finalizar
+                        </Button>
+                      </Box>
+                    </ModalFooter>
                   </Box>
                 );
+              default:
+                return <Box>Error</Box>;
             }
           })()}
-          
-        </ModalFooter>
       </ModalContent>
     </Modal>
   );

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import Cookies from 'universal-cookie/es6';
 const axios = require('axios');
 
@@ -20,6 +20,7 @@ const useInsertarViaje = (viajeParam, handleCrearViaje) => {
         setViaje(res.data);
         console.log("Estoy en get cuando hay respuesta");
         console.log(viajeParam);
+        alert("Se ingresó el viaje correctamente");
       })
       .catch((err) => {
         console.log("Estoy en error");
