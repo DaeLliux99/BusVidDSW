@@ -3,10 +3,10 @@ const useInput = (valor) => {
 	const [input, setInput] = useState(valor);
 	const handleInputChange = (e) => {
 		const {name, value} =e.target;
-		setInput({
+		setInput((input) => ({
 			...input,
 			[name]: value
-		});
+		}));
 		console.log(input)
 	}
 	return {input, handleInputChange};

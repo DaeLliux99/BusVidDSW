@@ -104,6 +104,27 @@ namespace BusVidAPI.AccesoDatos.Core
             }
             return listaEntidad;
         }
+
+        public Viaje ObtenerViaje(int idViaje)
+        {
+            Viaje viaje = null;
+            using (SqlConnection conexion = new SqlConnection(conf))
+            {
+                using (SqlCommand comando = new SqlCommand("paViaje_Obtener", conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@idViaje", idViaje);
+                    conexion.Open();
+                    SqlDataReader reader = comando.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        viaje = LlenarEntidad(reader);
+                    }
+                    conexion.Close();
+                }
+            }
+            return viaje;
+        }
         public Viaje InsertarViaje(Viaje viaje)
         {
             using (SqlConnection conexion = new SqlConnection(conf))
@@ -123,6 +144,27 @@ namespace BusVidAPI.AccesoDatos.Core
                 }
             }
             return viaje;
+        }
+        public Viaje ModificarViaje(Viaje viaje, int cantidad)
+        {
+            Viaje nuevoViaje = null;
+            using (SqlConnection conexion = new SqlConnection(conf))
+            {
+                using (SqlCommand comando = new SqlCommand("paViaje_Modificar", conexion))
+                {
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@idViaje", viaje.Id);
+                    comando.Parameters.AddWithValue("@nroAsientosDisp", (viaje.NroAsientosDisp - cantidad));
+                    conexion.Open();   
+                    SqlDataReader reader = comando.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        nuevoViaje = LlenarEntidad(reader);
+                    }
+                    conexion.Close();
+                }
+            }
+            return nuevoViaje;
         }
     }
 }

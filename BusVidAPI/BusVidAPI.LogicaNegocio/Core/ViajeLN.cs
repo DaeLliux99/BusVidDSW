@@ -20,11 +20,33 @@ namespace BusVidAPI.LogicaNegocio.Core
                 throw;
             }
         }
+        public Viaje ObtenerViaje(int idViaje)
+        {
+            try
+            {
+                return new ViajeDA().ObtenerViaje(idViaje);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
         public Viaje InsertarViaje(Viaje viaje)
         {
             try
             {
                 return new ViajeDA().InsertarViaje(viaje);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+        public Viaje ModificarViaje(Viaje viaje, int cantidad)
+        {
+            try
+            {
+                return new ViajeDA().ModificarViaje(viaje, cantidad);
             }
             catch (Exception)
             {

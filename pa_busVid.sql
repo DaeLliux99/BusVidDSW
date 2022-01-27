@@ -79,6 +79,14 @@ CREATE PROCEDURE paViaje_Listar
 AS
 SELECT * FROM VistaViaje;
 
+CREATE PROCEDURE paViaje_Obtener
+	@idViaje INT
+AS 
+BEGIN
+SELECT * FROM Viaje
+WHERE idViaje = @idViaje;
+END
+
 CREATE PROCEDURE paViaje_Insertar
 @fecha DATE,
 @horaInicio TIME,
@@ -92,6 +100,20 @@ INSERT INTO Viaje (fecha, horaInicio, nroAsientosDisp, precio, idBus, idAdminist
 VALUES (@fecha, @horaInicio, @nroAsientosDisp, @precio, @idBus, @idAdministrador);
 SELECT SCOPE_IDENTITY()
 END;
+
+CREATE PROCEDURE paViaje_Modificar
+	@idViaje INT,
+	@nroAsientosDisp INT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	update Viaje
+	set
+		nroAsientosDisp=@nroAsientosDisp
+	Where idViaje =@idViaje;
+SELECT SCOPE_IDENTITY();
+END
+
 
 CREATE PROCEDURE paCiudadExtremo_Insertar
 @idCiudad INT,
@@ -114,7 +136,8 @@ END
 
 CREATE PROCEDURE paPasaje_Insertar
 @idViaje INT,
-@idPasajero INT
+@idPasajero INT,
+@cantidad INT
 AS
-INSERT INTO Pasaje (idViaje, idPasajero)
-VALUES (@idViaje, @idPasajero);
+INSERT INTO Pasaje (idViaje, idPasajero, cantidad)
+VALUES (@idViaje, @idPasajero, @cantidad);

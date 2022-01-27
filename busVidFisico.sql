@@ -42,6 +42,7 @@ CREATE TABLE Pasaje(
 	idPasaje INT NOT NULL IDENTITY(1,1),
 	idViaje INT NOT NULL FOREIGN KEY REFERENCES Viaje(idViaje),
 	idPasajero INT NOT NULL FOREIGN KEY REFERENCES Pasajero(idPasajero),
+	cantidad INT NOT NULL,
 	CONSTRAINT PK_Pasaje PRIMARY KEY(idPasaje, idViaje, idPasajero)
 )
 

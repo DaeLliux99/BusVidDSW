@@ -32,10 +32,15 @@ namespace BusVidAPI.Controllers
         [HttpPost]
         public void Post([FromBody] Pasaje value)
         {
-            Pasajero pasajero = new Pasajero { Dni = value.Dni, Nombre = value.Nombre, Apellidos = value.Apellidos };
-            pasajero = new PasajeroLN().InsertarPasajero(pasajero);
-            value.IdPasajero = pasajero.Id;
-            Pasaje pasaje = new PasajeLN().InsertarPasaje(value);
+            ViajeLN viajeLN = new ViajeLN();
+            Viaje viaje = viajeLN.ObtenerViaje(value.IdViaje);
+            if (viaje.NroAsientosDisp > 0){
+                Pasajero pasajero = new Pasajero { Dni = value.Dni, Nombre = value.Nombre, Apellidos = value.Apellidos };
+                pasajero = new PasajeroLN().InsertarPasajero(pasajero);
+                value.IdPasajero = pasajero.Id;
+                Pasaje pasaje = new PasajeLN().InsertarPasaje(value);
+                viaje = viajeLN.ModificarViaje(viaje, value.Cantidad);
+            }
         }
 
         // PUT api/<PasajeController>/5

@@ -20,6 +20,7 @@ namespace BusVidAPI.AccesoDatos.Core
                     comando.CommandType = System.Data.CommandType.StoredProcedure;
                     comando.Parameters.AddWithValue("@idViaje", pasaje.IdViaje);
                     comando.Parameters.AddWithValue("@idPasajero", pasaje.IdPasajero);
+                    comando.Parameters.AddWithValue("@cantidad", pasaje.Cantidad);
                     conexion.Open();
                     pasaje.Id = Convert.ToInt32(comando.ExecuteScalar());
                     conexion.Close();
