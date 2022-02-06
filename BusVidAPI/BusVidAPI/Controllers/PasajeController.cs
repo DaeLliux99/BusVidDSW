@@ -34,7 +34,7 @@ namespace BusVidAPI.Controllers
         {
             ViajeLN viajeLN = new ViajeLN();
             Viaje viaje = viajeLN.ObtenerViaje(value.IdViaje);
-            if (viaje.NroAsientosDisp > 0){
+            if (viaje.NroAsientosDisp - value.Cantidad >= 0){
                 Pasajero pasajero = new Pasajero { Dni = value.Dni, Nombre = value.Nombre, Apellidos = value.Apellidos };
                 pasajero = new PasajeroLN().InsertarPasajero(pasajero);
                 value.IdPasajero = pasajero.Id;

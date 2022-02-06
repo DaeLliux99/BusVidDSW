@@ -13,7 +13,7 @@ const PasajeroForm  = ({ handleInputChange }) => {
     <Box>
       <FormControl>
         <FormLabel>DNI</FormLabel>
-        <NumberInput >
+        <NumberInput>
           <NumberInputField name="dni" onChange={handleInputChange} />
         </NumberInput>
       </FormControl>
